@@ -21,6 +21,11 @@ public class CodeblogController {
     @Autowired
     CodeblogService codeblogService;
 
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String initialPage(){
+        return "redirect:/posts";
+    }
+
     @RequestMapping(value = "/posts", method = RequestMethod.GET)
     public ModelAndView getPosts() {
         ModelAndView mv = new ModelAndView("posts");
